@@ -1,0 +1,18 @@
+<mvc:View 
+    controllerName="sync.d04.exercise01.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+    xmlns="sap.m">
+
+    <App id="app">
+    <Page id="mainPage">
+        <content>
+            <Label id="lebel1" text="{i18n>inputLabel}" required="true"></Label>
+            <Input id="input" width="60" value="{i18n>inputPlaceholder}"></Input>
+            <Button id="Btn" text="{i18n>buttonText}" press=".onPress"></Button>
+        </content>
+    </Page>
+    </App>
+</mvc:View>
+

@@ -1,0 +1,14 @@
+<mvc:View 
+    controllerName="exercise04.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+    xmlns="sap.m">
+
+    <Page id="page" title="{i18n>viewTitle}">
+        <content>
+            <Label id="label1" text="{i18n>inputLabel}" required="true"></Label>
+            <Input id="input" width = "60%" value="{/recipient/name}"></Input>
+            <Button id="Btn" press=".onPress" text="{i18n>buttonText}"></Button>
+        </content>
+    </Page>
+</mvc:View>
