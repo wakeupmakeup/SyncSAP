@@ -17,11 +17,7 @@ sap.ui.define([
                 manifest: "json"
             },
 
-            /**
-             * The component is initialized by UI5 automatically during the startup of the app and calls the init method once.
-             * @public
-             * @override
-             */
+            
             init: function () {
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
@@ -30,6 +26,21 @@ sap.ui.define([
                 var oData = {
                     operator: ""
                 };
+
+                // // 리스트 셀렉트 데이터 만들기
+                // var sOps = { ops: [
+                //     {op : "plus", text : "+"},
+                //     {op : "min",  text: "-"},
+                //     {op : "div",  text: "/"},
+                //     {op : "dou",  text: "*"} 
+                // ]};
+                
+                // // 리스트 데이터 모델로 만들기
+                // var opModel = new JSONModel(sOps);
+                
+                // // 리스트 데이터 View를 가져와서 
+                // this.getView().setModel(opModel);
+                // this.byId("idSelect").bindElement("/");
                 
                 var oModel = new JSONModel(oData);
                 this.setModel(oModel, "operator");

@@ -1,28 +1,27 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    // "sap/ui/model/json/JSONModel",
-    // "sap/ui/model/resource/ResourceModel",
     "sap/ui/core/Fragment"
 ], function (Controller, Fragment) {
     "use strict";
 
     return Controller.extend("sync.d04.exercise02.controller.Main", {
         onInit() {
-            this.selectedOperator = null; // 연산자 버튼 텍스트를 저장할 변수
+            
         },
 
-        onSelectOps(oEvent) {
-            var sOperator = oEvent.getSource().getText();
-            this.byId("selectOp").setText("선택한 연산자: " + sOperator);
-            this.selectedOperator = sOperator; // 연산자 저장
-        },
+        // onSelectOps(oEvent) {
+        //     var sOperator = oEvent.getSource().getText();
+        //     this.byId("selectOp").setText("선택한 연산자: " + sOperator);
+        //     this.selectedOperator = sOperator; // 연산자 저장
+        // },
 
         onCal() {
             var input1 = parseFloat(this.byId("num1").getValue());
             var input2 = parseFloat(this.byId("num2").getValue());
+            var op = this.getView().byId("idSelect").getSelectedKey();
             var result;
 
-            switch (this.selectedOperator) {
+            switch (op) {
                 case "+":
                     result = input1 + input2;
                     break;

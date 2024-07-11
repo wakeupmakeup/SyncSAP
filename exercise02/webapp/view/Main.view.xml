@@ -1,17 +1,39 @@
 <mvc:View controllerName="sync.d04.exercise02.controller.Main"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+
     <Page id="page" title="{i18n>title}">
         <content>
             <Label id="labelText" text="입력하세요" required="true"/>
             <Input id="num1" placeholder="첫 번째 숫자 입력" width="10%"/>
-            <Button id="opPlus" text ="+" press="onSelectOps"/>
+            <!-- <Button id="opPlus" text ="+" press="onSelectOps"/>
             <Button id="opd" text ="-" press="onSelectOps"/>
             <Button id="opdiv" text ="/" press="onSelectOps"/>
-            <Button id="opdo" text ="*" press="onSelectOps"/>
+            <Button id="opdo" text ="*" press="onSelectOps"/> -->
+            <Text id="selectOp" text=""/>
+             <Select id="idSelect" width="auto" items="{/ops}">
+                <core:ListItem 
+                id = "idListItem" 
+                key = "{/text}" 
+                text="{/text}">
+                </core:ListItem>
+            </Select>
             <Input id="num2" placeholder="두 번째 숫자 입력" width="10%"/>
             <Button id="result" text="계산하기" press="onCal"/>
-            <Text id="selectOp" text=""/>
+             
         </content>
     </Page>
 </mvc:View>
+
+
+<!-- <l:VerticalLayout id="idVereti" width="300px">
+            <Select id="idSelect" width="auto" items="{ops}">
+                <core:ListItem 
+                id = "idListItem" 
+                key = "{op}" 
+                text="{text}">
+                </core:ListItem>
+            </Select>
+            </l:VerticalLayout> -->
