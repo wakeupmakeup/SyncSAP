@@ -1,0 +1,63 @@
+<mvc:View controllerName="sync04d.exercise03.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:t="sap.ui.table">
+    <Page id="page" title="{i18n>title}">
+        <content> 
+
+    <Panel>
+        <VBox>
+        <Input id="input1" placeholder="첫 번째 값" required="true" width="40%"/>
+         <Select
+            id="mySelect"
+            width="40%"
+            items="{
+                path: '/items'
+            }">
+            <core:Item key="{key}" text="{text}" />
+        </Select>
+        <Input id="input2" placeholder="두 번째 값" required="true" width="40%"/>
+        <Button id="calBtn" text="계산하기" press=".onCal" width="40%"/>
+        </VBox>
+        </Panel>
+        <!-- 계산기 끝났음 -->
+
+        <!-- table 추가하기 -->
+        <Table id="resultTable"  width="auto" >
+            <headerToolbar>
+            <Toolbar>
+                <Title text = "History"/>
+            </Toolbar>
+            </headerToolbar>
+
+            <columns>
+                        <Column>
+                            <Text text="Number 1" />
+                        </Column>
+                        <Column>
+                            <Text text="Operator" />
+                        </Column>
+                        <Column>
+                            <Text text="Number 2" />
+                        </Column>
+                        <Column>
+                            <Text text="Result" />
+                        </Column>
+                        <Column>
+                            <Text text="Status" />
+                        </Column>
+                    </columns>
+                    
+            
+        </Table>
+        </content>
+
+   
+   
+   
+   
+    </Page>
+
+
+</mvc:View>
