@@ -1,0 +1,89 @@
+<mvc:View controllerName="sync04d.exercise03.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:t="sap.ui.table"
+   >
+    <Page id="page" title="{i18n>title}">
+        <content> 
+
+   
+        <VBox>
+        <Input id="input1" placeholder="첫 번째 값" required="true" width="40%"/>
+         <Select
+            id="mySelect"
+            width="40%"
+            items="{
+                path: '/items'
+            }">
+            <core:Item key="{key}" text="{text}" />
+        </Select>
+        <Input id="input2" placeholder="두 번째 값" required="true" width="40%"/>
+        <Button id="calBtn" text="계산하기" press=".onCal" width="40%"/>
+       
+    
+        <!-- 계산기 끝났음 -->
+
+        <!-- table 추가하기 -->
+        <!-- table 만들때 ui.table인지 m.table인지 사용법이 다르니 조심하라. -->
+       <Table id="resultTable" width="auto" items="{/results}">
+        <headerToolbar>
+            <Toolbar>
+                <Title text="계산 결과 테이블"/>
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <header>
+                    <Label text="Number 1" />
+                </header>
+            </Column>
+            
+            <Column>
+                <header>
+                    <Label text="연산자" />
+                </header>
+            </Column>
+
+            <Column>
+                <header>
+                    <Label text="Number 2" />
+                </header>
+            </Column>
+
+            <Column>
+                <header>
+                    <Label text="Result" />
+                </header>
+            </Column>
+
+            <Column>
+                <header>
+                    <Label text="Status" />
+                </header>
+            </Column>
+        </columns>
+
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{number1}"/>
+                    <Text text="{operator}"/>
+                    <Text text="{number2}"/>
+                    <Text text="{result}"/>
+                    <core:Icon src="sap-icon://circle-task-2" class="customIcon"   visible="{status}"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+     </VBox>
+</content>
+
+   
+   
+   
+   
+    </Page>
+
+
+</mvc:View>

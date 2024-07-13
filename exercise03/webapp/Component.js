@@ -5,20 +5,15 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "project1/model/models",
-	"sap/ui/vbm/Resource"
+        "sync04d/exercise03/model/models"
     ],
-    function (UIComponent,
-	Device,
-	models,
-	Resource) {
+    function (UIComponent, Device, models) {
         "use strict";
 
-        return UIComponent.extend("project1.Component", {
+        return UIComponent.extend("sync04d.exercise03.Component", {
             metadata: {
                 manifest: "json"
             },
-
 
             /**
              * The component is initialized by UI5 automatically during the startup of the app and calls the init method once.
@@ -34,11 +29,6 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
-
-                var i18nModel = new sap.ui.model.resource.ResourceModel({
-                    bundleName: "project1.i18n.i18n"
-                });
-                this.setModel(i18nModel, "i18n");
             }
         });
     }
